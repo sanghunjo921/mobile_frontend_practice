@@ -1,23 +1,21 @@
 import { useContext } from "react";
-import { ButtonContext } from "../../contexts/ButtonContext";
+import { MenuContext } from "../../contexts/MenuContext";
 import styles from "./Button.module.css"
 
 
-export const Button = ({children, position = "static"}) => {
-    const [click, setClick] = useContext(ButtonContext);
+export const Button = ({children, position = "static", onClick}) => {
+    const {visible} = useContext(MenuContext);
+
     const overrideCSS = position === "fixed" ? {
         bottom: "2rem",
         left: "50%"
     } : {};
 
-    const clickHandler = () => {
-        setClick(!click);
-    }
-
-
-    return (
+    return visible ? (
         <div className={styles.container} style={{position, ...overrideCSS}}>
-            <button className={styles.button} click = {clickHandler}>{children}</button>
+            <button className={styles.button} onClick={onClick}>{children}</button>
         </div>
+    ) : (
+        <></>
     )
 }

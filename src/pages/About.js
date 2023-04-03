@@ -1,9 +1,6 @@
-import { useContext } from "react";
-import { ButtonContext } from "../contexts/ButtonContext";
 
 
 export const About = ({id}) => {
-  const [click, isClick] = useContext(ButtonContext)
 
   return (
     
@@ -16,7 +13,6 @@ export const About = ({id}) => {
     id = {id}
   >
     About
-    {click && <button>button</button> }
   </div>
   
   );

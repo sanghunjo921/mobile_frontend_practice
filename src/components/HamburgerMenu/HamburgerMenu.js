@@ -3,11 +3,12 @@ import { MenuContext } from "../../contexts/MenuContext";
 import style from "./HamburgerMenu.module.css";
 
 export const HamburgerMenu = () => {
-  const {isOpen, setOpen, isMobile, setMobile} = useContext(MenuContext);
+  const {isOpen, setOpen, isMobile, isInit, setInit} = useContext(MenuContext);
 
 
   const menuHanlder = () => {
     setOpen(!isOpen);
+    setInit(!isInit);
   };
   return (
     <div className={style.container} style={{display: isMobile? "block": "none",}}onClick={menuHanlder}>

@@ -19,7 +19,7 @@ const NavItems = [
 ];
 
 export const Navigation = () => {
-  const {isOpen, isMobile} = useContext(MenuContext);
+  const {isOpen, isMobile, isInit} = useContext(MenuContext);
   return isMobile ? (
     <nav
       className={`${style.container} ${
@@ -27,7 +27,7 @@ export const Navigation = () => {
       }`}
     >
       <ul >
-        {NavItems.map((e) => (
+        {!isInit && NavItems.map((e) => (
           <NavItem key={e.name} {...e} />
         ))}
       </ul>
