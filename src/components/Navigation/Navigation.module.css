@@ -1,0 +1,34 @@
+.container {
+  transform: translateX(100%);
+}
+
+.containerSlideOut {
+  animation: slide-to-right 0.4s linear 0.4s both;
+}
+
+.containerSlideIn {
+  animation: slide-to-left 0.4s linear 0.4s both;
+}
+
+@keyframes slide-to-left {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-to-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.desktop {
+  display:  flex;
+  background-color: transparent;
+}

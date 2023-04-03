@@ -1,0 +1,43 @@
+.container {
+  padding: 2rem;
+  overflow: hidden;
+  text-align: center;
+}
+
+.container:hover span, .container:hover div {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: transform 0.4s linear;
+}
+
+.container span, .container div {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-weight: 900;
+  position: relative;
+  transition: transform 0.4s linear;
+}
+
+.container span::before {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  opacity: 0;
+  transition: opacity 0.4s linear;
+}
+
+.container:hover span::before {
+  opacity: 1;
+  transition: opacity 0.4s linear;
+}
+
+.container a {
+  color: white;
+  text-decoration: none;
+}
